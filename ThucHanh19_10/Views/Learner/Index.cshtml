@@ -1,0 +1,64 @@
+@model IEnumerable<ThucHanh19_10.Models.Learner>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/views/Shared/MyLayout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            
+            <th>
+                ma
+            </th>
+            <th>
+                Ten
+            </th>
+            <th>
+                ho
+            </th>
+            <th>
+                nganh
+            </th>
+            <th>
+                ngay Nhap Hoc
+            </th>
+            <th>
+                Chuc nang
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(model => item.LearnerID)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.FirstMidName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Major.MajorName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.EnrollmentDate)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.LearnerID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.LearnerID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.LearnerID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

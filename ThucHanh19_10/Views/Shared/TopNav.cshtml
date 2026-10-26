@@ -4,22 +4,15 @@
 @{
 }
 
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-        <div class="container-fluid">
-            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ThucHanh19_10</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav flex-grow-1">
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<div id="sidebar" class="border-end">
+    <div class="sidebar-heading">Management System</div>
+    <div class="list-group list-group-flush">
+        <div class="p-2 text-muted small text-uppercase fw-bold ps-3">Core</div>
+        <a href="#" class="list-group-item list-group-item-action ps-4"><i class="fas fa-tachometer-alt me-2"></i> Dashboard</a>
+
+        <div class="p-2 text-muted small text-uppercase fw-bold ps-3 mt-2">Addons</div>
+        <a href="#" class="list-group-item list-group-item-action ps-4"><i class="fas fa-code-branch me-2"></i> Branches</a>
+        <a asp-controller="Learner" asp-action="Index" class="list-group-item list-group-item-action ps-4"><i class="fas fa-users me-2"></i> Students</a>
+    </div>
+</div>
+<!-- /#sidebar -->

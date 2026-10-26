@@ -1,36 +1,59 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿﻿
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - ThucHanh19_10</title>
-    <script type="importmap"></script>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ThucHanh19_10.styles.css" asp-append-version="true" />
+    <!-- Sử dụng FontAwesome cho các icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    
 </head>
 <body>
-    <header>
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar -->
         <partial name="TopNav" />
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+        <!-- /#sidebar -->
+        <!-- Page Content -->
+        <div id="content-wrapper" class="d-flex flex-column min-vh-100">
+            <!-- Top navbar -->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom px-3">
+                <div class="container-fluid">
+                    <button class="btn btn-sm btn-dark" id="sidebarToggle"><i class="fas fa-bars"></i></button>
+
+                    <form class="d-flex ms-auto me-3" role="search">
+                        <input class="form-control form-control-sm" type="search" placeholder="Search for..." aria-label="Search">
+                        <button class="btn btn-sm btn-primary ms-1" type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#" role="button"><i class="fas fa-user"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Main Content Area -->
+            <div class="container-fluid px-4 py-3 flex-grow-1">
+                @RenderBody()
+            </div>
+
+            <!-- Footer -->
+            <footer class="text-muted text-center py-3 border-top mt-auto bg-light">
+                <div class="container">
+                    Copyright &copy; 2026
+                </div>
+            </footer>
+        </div>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <partial name="Footer" />
-    </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
-    @RenderSection("Script" , required:false);
 </body>
 </html>

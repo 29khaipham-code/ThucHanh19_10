@@ -1,0 +1,35 @@
+/* CSS for TopNav view */
+/* CSS for MyLayout view */
+body {
+    overflow-x: hidden;
+}
+
+#sidebar {
+    min-height: 100vh;
+    background-color: #212529;
+    color: #fff;
+    width: 250px;
+}
+
+    #sidebar .sidebar-heading {
+        padding: 1rem 1.25rem;
+        font-size: 1.2rem;
+        font-weight: bold;
+        background-color: #1a1d20;
+        color: #fff;
+    }
+
+    #sidebar .list-group-item {
+        background-color: #212529;
+        color: #adb5bd;
+        border: none;
+    }
+
+        #sidebar .list-group-item:hover, #sidebar .list-group-item.active {
+            background-color: #343a40;
+            color: #fff;
+        }
+
+#content-wrapper {
+    width: 100%;
+}

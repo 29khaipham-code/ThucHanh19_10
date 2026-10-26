@@ -45,16 +45,21 @@
             </div>
             <div class="row mb-3">
                 <label asp-for="Gender" class="col-sm-3 col-form-label"></label>
-                <div class="col-sm-9 d-flex align-items-center gap-3">
-                    @foreach (var gender in ViewBag.AllGenders)
-                    {
-                        <div class="form-check">
-                            <input type="radio" asp-for="Gender" value="@gender" id="Gender@(gender)" class="form-check-input" />
-                            <label class="form-check-label" for="Gender@(gender)">@gender</label>
-                        </div>
-                    }
+
+                <div class="col-sm-9">
+                    <div class="d-flex align-items-center gap-3">
+                        @foreach (var gender in ViewBag.AllGenders)
+                        {
+                            <div class="form-check">
+                                <input type="radio" asp-for="Gender" value="@gender" id="Gender@(gender)" class="form-check-input" />
+                                <label class="form-check-label" for="Gender@(gender)">@gender</label>
+                            </div>
+                        }
+                    </div>
+                    
+                    <span asp-validation-for="Gender" class="text-danger d-block"></span>
                 </div>
-                <span asp-validation-for="Gender" class="text-danger"></span>
+                
             </div>
 
             <div class="row mb-3">
@@ -78,6 +83,13 @@
                 <div class="col-sm-9">
                     <input asp-for="DateOfBorth" class="form-control" type="date" />
                     <span asp-validation-for="DateOfBorth" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label asp-for="diem" class="col-sm-3 col-form-label"></label>
+                <div class="col-sm-9">
+                    <input asp-for="diem" class="form-control" type="text" />
+                    <span asp-validation-for="diem" class="text-danger"></span>
                 </div>
             </div>
             <div class="row mb-3">
